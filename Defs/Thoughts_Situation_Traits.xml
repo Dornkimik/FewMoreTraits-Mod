@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThoughtDef>
+		<defName>VeteranUnhappy</defName>
+		<workerClass>FewMoreTraits.ThoughtWorker_IsCarryingMeleeWeapon</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<requiredTraits>
+			<li>Sehr_Veteran</li>
+		</requiredTraits>
+		<stages>
+			<li>
+				<label>veteran has melee weapon</label>
+				<description>I hate carrying melee weapons. I want to have a ranged weapon!</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>VeteranSawThingsInWar</defName>
+		<workerClass>FewMoreTraits.ThoughtWorker_SawThingsInWar</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<requiredTraits>
+			<li>Sehr_Veteran</li>
+		</requiredTraits>
+		<stages>
+			<li>
+				<label>Saw things in war</label>
+				<description>I saw my own comrades die in war...</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>PrisonerHappy</defName>
+		<workerClass>FewMoreTraits.ThoughtWorker_IsPrisoned</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<requiredTraits>
+			<li>Sehr_BornPrisoner</li>
+		</requiredTraits>
+		<stages>
+			<li>
+				<label>In prison</label>
+				<description>I love being in prison.</description>
+				<baseMoodEffect>20</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>CleanPawnHappyBecauseClean</defName>
+		<workerClass>FewMoreTraits.ThoughtWorker_PassionateCleaning</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<requiredTraits>
+			<li>Sehr_Clean</li>
+		</requiredTraits>
+		<stages>
+			<li>
+				<label>passionate cleaning</label>
+				<description>I love it when I can clean things.</description>
+				<baseMoodEffect>10</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+</Defs>

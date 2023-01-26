@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <MentalBreakDef>
+    <defName>PanicFreezing</defName>
+    <mentalState>PanicFreezing</mentalState>
+    <baseCommonality>1</baseCommonality>
+    <intensity>Extreme</intensity>
+  </MentalBreakDef>
+  
+  <MentalStateDef ParentName="BaseMentalState">
+    <defName>PanicFreezing</defName>
+    <label>panic freezing</label>
+    <stateClass>FewMoreTraits.MentalState_PanicFreezing</stateClass>
+	<workerClass>FewMoreTraits.MentalStateWorker_PanicFreezing</workerClass>
+    <category>Misc</category>
+    <blockInteractionInitiationExcept>
+      <li>Insult</li>
+    </blockInteractionInitiationExcept>
+    <blockInteractionRecipientExcept>
+      <li>Insult</li>
+    </blockInteractionRecipientExcept>
+    <blockRandomInteraction>true</blockRandomInteraction>
+    <nameColor>(0.65, 0.9, 0.93)</nameColor>
+    <beginLetterLabel>panic attack</beginLetterLabel>
+    <beginLetter>{0} is freezing in panic.</beginLetter>
+    <recoveryMessage>{0} is no longer freezing in panic.</recoveryMessage>
+    <baseInspectLine>Mental state: freezing in panic</baseInspectLine>
+	<stateEffecter>PanicFreezing</stateEffecter>
+    <blockNormalThoughts>true</blockNormalThoughts>
+    <inCaravanCanDo>true</inCaravanCanDo>
+  </MentalStateDef>
+
+</Defs>

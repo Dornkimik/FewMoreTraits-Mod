@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+[Rare] 0.5 commonality
+[Uncommon] 1.0 commonality
+[Common] 2.0 commonality
+-->
+<Defs>
+
+  <TraitDef>
+    <defName>Sehr_Humorous</defName>
+    <commonality>2</commonality>
+	<requiredWorkTags>
+		<li>Social</li>
+	</requiredWorkTags>
+    <degreeDatas>
+      <li>
+        <label>humorous</label>
+        <description>{PAWN_nameDef} is a very funny person.</description>
+		<statOffsets>
+			<SocialImpact>0.50</SocialImpact>
+		</statOffsets>
+        <skillGains>
+          <li>
+            <key>Social</key>
+            <value>2</value>
+          </li>
+        </skillGains>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+  
+   <TraitDef>
+    <defName>Sehr_Hulk</defName>
+    <commonality>0.5</commonality>
+	<requiredWorkTags>
+		<li>Violent</li>
+	</requiredWorkTags>
+	<forcedPassions>
+		<li>Melee</li>
+	</forcedPassions>
+    <degreeDatas>
+      <li>
+        <label>hulk</label>
+        <description>{PAWN_nameDef} is a very strong person that doesn't care about getting damaged.</description>
+		<statOffsets>
+			<PainShockThreshold>0.5</PainShockThreshold>
+			<IncomingDamageFactor>-0.5</IncomingDamageFactor>
+		</statOffsets>
+        <skillGains>
+          <li>
+            <key>Melee</key>
+            <value>6</value>
+          </li>
+        </skillGains>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<li>Wimp</li>
+	</conflictingTraits>
+  </TraitDef>
+  
+   <TraitDef>
+    <defName>Sehr_Veteran</defName>
+    <commonality>1</commonality>
+	<requiredWorkTags>
+		<li>Violent</li>
+	</requiredWorkTags>
+	<forcedPassions>
+		<li>Shooting</li>
+	</forcedPassions>
+    <degreeDatas>
+      <li>
+        <label>veteran</label>
+        <description>{PAWN_nameDef} is an ex military soldier with weapon experience. Be careful when you start a fight with {PAWN_objective}</description>
+        <statOffsets>
+			<PainShockThreshold>0.35</PainShockThreshold>
+			<ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+			<AimingDelayFactor>-0.25</AimingDelayFactor>
+        </statOffsets>
+        <skillGains>
+          <li>
+            <key>Shooting</key>
+            <value>5</value>
+          </li>
+        </skillGains>
+      </li>
+    </degreeDatas>
+	<conflictingTraits>
+		<li>Wimp</li>
+	</conflictingTraits>
+  </TraitDef>
+  
+	<!--
+   <TraitDef>
+    <defName>Test</defName>
+    <commonality>100</commonality>
+    <degreeDatas>
+      <li>
+        <label>test</label>
+        <description>{PAWN_nameDef} test</description>
+		<statOffsets>
+			<MoveSpeed>100.0</MoveSpeed>
+		</statOffsets>
+		<theOnlyAllowedMentalBreaks>
+			<li>PanicFreezing</li>
+		</theOnlyAllowedMentalBreaks>
+		<randomMentalState>PanicFreezing</randomMentalState>
+		<randomMentalStateMtbDaysMoodCurve>
+			<points>
+				<li>(0, 50)</li>
+			</points>
+		</randomMentalStateMtbDaysMoodCurve>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+  
+	-->
+	<TraitDef>
+		<defName>Sehr_Dirty</defName>
+		<commonality>2</commonality>
+		<degreeDatas>
+			<li>
+				<label>dirty</label>
+				<description>{PAWN_nameDef} often leaves trash around and produces way more filth than regular pawns.</description>
+				<statOffsets>
+					<FilthRate>1.0</FilthRate>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+		<conflictingTraits>
+			<li>Sehr_Clean</li>
+		</conflictingTraits>
+	</TraitDef>
+
+	<TraitDef>
+		<defName>Sehr_Clean</defName>
+		<commonality>2</commonality>
+		<degreeDatas>
+			<li>
+				<label>clean</label>
+				<description>{PAWN_nameDef} is very clean and never leaves trash around.</description>
+				<statOffsets>
+					<FilthRate>-1.0</FilthRate>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+		<conflictingTraits>
+			<li>Sehr_Dirty</li>
+		</conflictingTraits>
+	</TraitDef>
+
+	<TraitDef>
+		<defName>Sehr_FastEater</defName>
+		<commonality>2</commonality>
+		<degreeDatas>
+			<li>
+				<label>fast eater</label>
+				<description>{PAWN_nameDef} eats a bit faster than {PAWN_possessive} colony friends, because {PAWN_pronoun} thinks that enjoying a meal is a waste of time.</description>
+				<statOffsets>
+					<EatingSpeed>0.25</EatingSpeed>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+		<conflictingTraits>
+			<li>Sehr_SlowEater</li>
+		</conflictingTraits>
+	</TraitDef>
+
+	<TraitDef>
+		<defName>Sehr_SlowEater</defName>
+		<commonality>2</commonality>
+		<degreeDatas>
+			<li>
+				<label>slow eater</label>
+				<description>{PAWN_nameDef} needs a bit more time to finish a meal, because {PAWN_pronoun} take's {PAWN_possessive} time and enjoys the meal.</description>
+				<statOffsets>
+					<EatingSpeed>-0.25</EatingSpeed>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+		<conflictingTraits>
+			<li>Sehr_FastEater</li>
+		</conflictingTraits>
+	</TraitDef>
+
+	<TraitDef>
+		<defName>Sehr_Manipulative</defName>
+		<commonality>1</commonality>
+		<requiredWorkTags>
+			<li>Social</li>
+		</requiredWorkTags>
+		<degreeDatas>
+			<li>
+				<label>manipulative</label>
+				<description>{PAWN_nameDef} is a master of manipulation. {PAWN_pronoun} controls people like dolls.</description>
+				<statOffsets>
+					<NegotiationAbility>0.2</NegotiationAbility>
+					<SocialImpact>0.5</SocialImpact>
+					<TradePriceImprovement>0.25</TradePriceImprovement>
+				</statOffsets>
+				<skillGains>
+					<li>
+						<key>Social</key>
+						<value>5</value>
+					</li>
+				</skillGains>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+
+	<TraitDef>
+		<defName>Sehr_BornPrisoner</defName>
+		<commonality>1</commonality>
+		<degreeDatas>
+			<li>
+				<label>born prisoner</label>
+				<description>{PAWN_nameDef} likes to be in prison. {PAWN_pronoun} just feels safe in a locked room.</description>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+
+	<TraitDef>
+		<defName>Sehr_CalmHand</defName>
+		<commonality>1</commonality>
+		<requiredWorkTags>
+			<li>Caring</li>
+			<li>Animals</li>
+		</requiredWorkTags>
+		<degreeDatas>
+			<li>
+				<label>calm hand</label>
+				<description>{PAWN_nameDef} has a calm hand. Because of this {PAWN_pronoun} is excellent in working as a surgeon or with animals.</description>
+				<statOffsets>
+					<MedicalSurgerySuccessChance>0.2</MedicalSurgerySuccessChance>
+					<MedicalTendQuality>0.2</MedicalTendQuality>
+					<TameAnimalChance>0.2</TameAnimalChance>
+					<TrainAnimalChance>0.2</TrainAnimalChance>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+
+	<TraitDef>
+		<defName>Sehr_Autistic</defName>
+		<commonality>1</commonality>
+		<degreeDatas>
+			<li>
+				<label>autistic</label>
+				<description>{PAWN_nameDef} has diagnosed autism, because of this {PAWN_pronoun} has difficulties in social areas but {PAWN_pronoun} can learn things a bit easier than others.</description>
+				<statOffsets>
+					<GlobalLearningFactor>0.5</GlobalLearningFactor>
+					<MentalBreakThreshold>0.12</MentalBreakThreshold>
+				</statOffsets>
+				<skillGains>
+					<li>
+						<key>Social</key>
+						<value>-4</value>
+					</li>
+				</skillGains>
+			</li>
+		</degreeDatas>
+		<conflictingTraits>
+			<li>Sehr_Veteran</li>
+			<li>Sehr_Manipulative</li>
+		</conflictingTraits>
+	</TraitDef>
+
+	<TraitDef>
+		<defName>Sehr_Handyman</defName>
+		<commonality>2</commonality>
+		<requiredWorkTags>
+			<li>Constructing</li>
+		</requiredWorkTags>
+		<degreeDatas>
+			<li>
+				<label>handyman</label>
+				<description>{PAWN_nameDef} has a talent for constructing things.</description>
+				<statOffsets>
+					<ConstructSuccessChance>0.25</ConstructSuccessChance>
+					<ConstructionSpeed>0.25</ConstructionSpeed>
+				</statOffsets>
+				<skillGains>
+					<li>
+						<key>Construction</key>
+						<value>4</value>
+					</li>
+				</skillGains>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+
+	<TraitDef>
+		<defName>Sehr_AnimalFriend</defName>
+		<commonality>2</commonality>
+		<requiredWorkTags>
+			<li>Animals</li>
+		</requiredWorkTags>
+		<degreeDatas>
+			<li>
+				<label>animal friend</label>
+				<description>{PAWN_nameDef} is a real animal friend. {PAWN_pronoun} likes animals and animals {PAWN_possessive}.</description>
+				<statOffsets>
+					<TameAnimalChance>0.25</TameAnimalChance>
+					<TrainAnimalChance>0.25</TrainAnimalChance>
+				</statOffsets>
+				<skillGains>
+					<li>
+						<key>Animals</key>
+						<value>4</value>
+					</li>
+				</skillGains>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+
+	<TraitDef>
+		<defName>Sehr_LightFoot</defName>
+		<commonality>2</commonality>
+		<degreeDatas>
+			<li>
+				<label>light foot</label>
+				<description>{PAWN_nameDef} is more quiet on {PAWN_possessive} feet, {PAWN_pronoun} is a bit stealthier, faster and can carry a bit less.</description>
+				<statOffsets>
+					<HuntingStealth>0.35</HuntingStealth>
+					<MoveSpeed>0.2</MoveSpeed>
+					<CarryingCapacity>-5</CarryingCapacity>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+		<conflictingTraits>
+			<li>Sehr_HeavyFoot</li>
+			<li>SpeedOffset</li>
+		</conflictingTraits>
+	</TraitDef>
+
+	<TraitDef>
+		<defName>Sehr_HeavyFoot</defName>
+		<commonality>2</commonality>
+		<degreeDatas>
+			<li>
+				<label>heavy foot</label>
+				<description>{PAWN_nameDef} has heavy feet, because of this {PAWN_pronoun} is a bit slower than others and get's easier detected by animals while hunting, but can carry a bit more.</description>
+				<statOffsets>
+					<HuntingStealth>-0.35</HuntingStealth>
+					<MoveSpeed>-0.2</MoveSpeed>
+					<CarryingCapacity>5</CarryingCapacity>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+		<conflictingTraits>
+			<li>Sehr_LightFoot</li>
+			<li>SpeedOffset</li>
+		</conflictingTraits>
+	</TraitDef>
+
+	<TraitDef>
+		<defName>Sehr_MasterShooter</defName>
+		<commonality>0.5</commonality>
+		<requiredWorkTags>
+			<li>Violent</li>
+		</requiredWorkTags>
+		<degreeDatas>
+			<li>
+				<label>master shooter</label>
+				<description>{PAWN_nameDef} nearly never misses a shot.</description>
+				<statOffsets>
+					<ShootingAccuracyPawn>250</ShootingAccuracyPawn>
+					<AimingDelayFactor>1</AimingDelayFactor>
+				</statOffsets>
+				<skillGains>
+					<li>
+						<key>Shooting</key>
+						<value>6</value>
+					</li>
+				</skillGains>
+			</li>
+		</degreeDatas>
+		<conflictingTraits>
+			<li>Sehr_Veteran</li>
+		</conflictingTraits>
+	</TraitDef>
+
+	<TraitDef>
+		<defName>Sehr_CrossEyed</defName>
+		<commonality>1</commonality>
+		<degreeDatas>
+			<li>
+				<label>cross eyed</label>
+				<description>{PAWN_nameDef}'s both eyes looking in different directions, which makes it a bit harder to aim. Some pawn's also think that {PAWN_pronoun} is a bit ugly because both eyes looking in different directions.</description>
+				<statOffsets>
+					<ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
+					<AimingDelayFactor>0.2</AimingDelayFactor>
+					<PawnBeauty>-1</PawnBeauty>
+					<WorkSpeedGlobal>-0.15</WorkSpeedGlobal>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+		<conflictingTraits>
+			<li>Sehr_MasterShooter</li>
+		</conflictingTraits>
+	</TraitDef>
+
+	<TraitDef>
+		<defName>Sehr_HawkEyed</defName>
+		<commonality>1</commonality>
+		<degreeDatas>
+			<li>
+				<label>hawk eyed</label>
+				<description>{PAWN_nameDef} has excellent eyes. {PAWN_pronoun} can hit targets with more accuracy and {PAWN_pronoun} also can do {PAWN_possessive} work a bit faster than others.</description>
+				<statOffsets>
+					<ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+					<WorkSpeedGlobal>0.15</WorkSpeedGlobal>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+		<conflictingTraits>
+			<li>Sehr_MasterShooter</li>
+			<li>Sehr_CrossEyed</li>
+		</conflictingTraits>
+	</TraitDef>
+</Defs>
